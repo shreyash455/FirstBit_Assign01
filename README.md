@@ -40,6 +40,51 @@ void  main()
     }
 }
 
+3. Write a program to check whether a given year is a leap year.
+
+#include <stdio.h>
+void main() {
+int year=2004;
+if(year%4==0 && year%100!=0 || year%400==0)
+{
+   printf("is a leap year");
+}
+else
+{
+   printf("not a leap year");   
+}
+}
+
+4. Write a program to check whether a given character is a vowel or consonant.
+
+#include <stdio.h>
+
+void main() {
+char ch='5';
+
+if(ch>='a' && ch<='z')
+{
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+    printf("vowel");
+    else
+    printf("consonant");
+}
+else
+printf("this is not a alphabate");
+}
+
+5. Write a program to check whether a person is eligible to vote (age ≥ 18).
+
+#include <stdio.h>
+
+void main() {
+int age =24;
+if(age>=18)
+printf("eligible for vote:::");
+else
+printf("not eligible for vote:::");
+}
+
 6. Write a program to check whether a given character is uppercase or lowercase.
 
 #include <stdio.h>
@@ -57,6 +102,11 @@ int main()
 	
 	return 0;
 }
+
+7. Calculating total salary based on basic. If basic <=5000 da, ta and hra will be
+10%,20% and 25% respectively otherwise da, ta and hra will be 15%,25% and 30%
+respectively.
+
 
 
 
