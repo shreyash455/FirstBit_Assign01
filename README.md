@@ -107,13 +107,30 @@ int main()
 10%,20% and 25% respectively otherwise da, ta and hra will be 15%,25% and 30%
 respectively.
 
+#include <stdio.h>
+
+void main() {
+double salary = 6000;
+double da,ta,hra,ts;
+ts=salary+da+ta+hra;
+if(salary<=5000)
+{
+    da=salary*0.1;
+    ta=salary*0.2;
+    hra=salary*0.25;
+    printf("print if part");
+}
+else
+{
+    da=salary*0.15;
+    ta=salary*0.25;
+    hra=salary*0.30;
+    printf("total salary");
+}
+}
 
 
-
-
-
-
-ClASS WORK::::::::::::::::::::::::
+:::::::::::::::::::::::ClASS WORK::::::::::::::::::::::::
 ..................................nested if else..................................
 #include <stdio.h>
 
