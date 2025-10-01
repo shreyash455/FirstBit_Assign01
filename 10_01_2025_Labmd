@@ -1,0 +1,44 @@
+1. Print 50 t0 100
+
+#include<stdio.h>
+int main()
+{
+	int i=50;
+	while(i<=100)
+	{
+		printf("%d\n",i);
+		i++;
+		
+	}
+	return 0;
+}
+
+2. Print 1 to 10
+
+#include<stdio.h>
+int main()
+{
+	int i=1;
+	while(i<=10)
+	{
+		printf("%d\n",i);
+		i++;
+		
+	}
+	return 0;
+}
+
+3. Print 10 times Fbs
+
+#include<stdio.h>
+int main()
+{
+	int i=0;
+	while(i<=9)
+	{
+		printf("FBS\n");
+		i++;
+		
+	}
+	return 0;
+}
