@@ -42,3 +42,19 @@ int main()
 	}
 	return 0;
 }
+
+4. Sum of Digits
+
+#include<stdio.h>
+int main()
+{
+	int i=2589,sum=0,rem;
+	while(i>0)
+	{
+		rem=i%10;
+		sum=sum+rem;
+		i=i/10;
+	}
+	printf("%d\n",sum);
+	return 0;
+}
