@@ -41,3 +41,75 @@ int main() {
     printf("%d", sum);   // Output: 15
     return 0;
 }
+
+4 Check the given number is prime or not.
+Input: n = 7
+Output: Prime
+
+#include <stdio.h>
+
+int main() {
+    int n = 7,i;
+    int isPrime = 1;          
+
+    if (n < 2)               
+        isPrime = 0;
+    else {
+            for ( i = 2; i * i <= n; ++i) {
+            if (n % i == 0) { 
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+
+    printf("%s\n", isPrime ? "Prime" : "Not Prime");
+    return 0;
+}
+
+5 Check the given number is Armstrong number or not..
+Input: n = 153
+Output: Armstrong
+#include <stdio.h>
+
+int main() {
+    int n = 153;
+    int a = n / 100;        // hundreds
+    int b = (n / 10) % 10;  // tens
+    int c = n % 10;         // units
+
+    if (a*a*a + b*b*b + c*c*c == n)
+        printf("Armstrong\n");
+    else
+        printf("Not Armstrong\n");
+
+    return 0;
+}
+
+6.Check the given number is Perfect number or not.
+Input: n = 28
+Output: Perfect
+
+""""""""""""""""A perfect number is a positive integer that is equal to the sum of all its proper positive divisors (that is, all positive divisors excluding the number itself).
+Example:
+Divisors of 28 (excluding 28) → 1, 2, 4, 7, 14
+Sum → 1 + 2 + 4 + 7 + 14 = 28 → Perfect number."""""""""""""""""""""
+
+#include <stdio.h>
+
+int main() {
+    int n = 28;
+    int sum = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0)      // i is a proper divisor
+            sum += i;
+    }
+
+    if (sum == n)
+        printf("Perfect\n");
+    else
+        printf("Not Perfect\n");
+
+    return 0;
+}
