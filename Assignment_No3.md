@@ -96,7 +96,6 @@ Divisors of 28 (excluding 28) → 1, 2, 4, 7, 14
 Sum → 1 + 2 + 4 + 7 + 14 = 28 → Perfect number."""""""""""""""""""""
 
 #include <stdio.h>
-
 int main() {
     int n = 28;
     int sum = 0;
@@ -128,3 +127,66 @@ int main() {
     printf("%llu\n", factorial(n));  // 120
     return 0;
 }
+
+8 Check the given number is Strong number or not.
+Input: n = 145
+Output: Strong
+
+✅ Example:
+145
+1! + 4! + 5! = 1 + 24 + 120 = 145 → Strong number ✅
+
+#include <stdio.h>
+int main() {
+    int n = 145;
+    int original = n;
+    int sum = 0;
+
+    while (n > 0) {
+        int digit = n % 10;
+        int fact = 1;
+
+        // factorial of digit
+        for (int i = 1; i <= digit; ++i)
+            fact *= i;
+
+        sum += fact;
+        n /= 10;
+    }
+
+    if (sum == original)
+        printf("Strong\n");
+    else
+        printf("Not Strong\n");
+
+    return 0;
+}
+
+
+9 Check the given number is Palindrome number or not.
+Input: n = 121
+Output: Palindrome
+
+#include <stdio.h>
+int main() {
+    int n = 121;
+    int original = n;
+    int reversed = 0;
+
+    while (n > 0) {
+        int digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n /= 10;
+    }
+
+    if (reversed == original)
+        printf("Palindrome\n");
+    else
+        printf("Not Palindrome\n");
+
+    return 0;
+}
+
+10 Find Sum of first and last digit of given number.
+Input: n = 12345
+Output: 6 (1 + 5)
