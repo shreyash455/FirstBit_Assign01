@@ -113,3 +113,18 @@ int main() {
 
     return 0;
 }
+
+7 Find factorial of given number.
+Input: n = 5
+Output: 120
+
+#include <stdio.h>
+unsigned long long factorial(int n) {
+    return (n <= 1) ? 1 : n * factorial(n - 1);
+}
+
+int main() {
+    int n = 5;
+    printf("%llu\n", factorial(n));  // 120
+    return 0;
+}
