@@ -122,3 +122,92 @@ int main(void) {
     }
     return 0;
 }
+
+
+
+5. Write a menu driven program to take a number for user and perform operations as follows.
+
+Press 1.To check number is even or odd.
+2.To check number is prime or not.
+3.To check number is pallindrome or not.
+4.To check number is positive, negative or zero.
+5.To reverse a number.
+6.To find sum of digits.
+
+#include <stdio.h>
+#include <stdbool.h>
+int i;
+/* ---------- utility functions ---------- */
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for ( i = 2; i * i <= n; ++i)
+        if (n % i == 0) return false;
+    return true;
+}
+
+bool isPalindrome(int n) {
+    int orig = n, rev = 0;
+    while (n) { rev = rev * 10 + n % 10; n /= 10; }
+    return orig == rev;
+}
+
+int reverse(int n) {
+    int rev = 0;
+    while (n) { rev = rev * 10 + n % 10; n /= 10; }
+    return rev;
+}
+
+int sumDigits(int n) {
+    int s = 0; 
+    n = n < 0 ? -n : n;          /* handle negatives */
+    while (n) { s += n % 10; n /= 10; }
+    return s;
+}
+
+/* ---------- driver ---------- */
+int main(void) {
+    int choice, num;
+
+    while (1) {
+        puts("\n========== MENU ==========");
+        puts("1. Even or Odd");
+        puts("2. Prime or Not");
+        puts("3. Palindrome or Not");
+        puts("4. Positive / Negative / Zero");
+        puts("5. Reverse the Number");
+        puts("6. Sum of Digits");
+        puts("0. Exit");
+        printf("Enter choice: ");
+        if (scanf("%d", &choice) != 1) break;
+
+        if (choice == 0) { puts("Good-bye!"); break; }
+        if (choice < 1 || choice > 6) { puts("Invalid choice, try again."); continue; }
+
+        printf("Enter an integer: ");
+        scanf("%d", &num);
+
+        switch (choice) {
+            case 1:
+                printf("%d is %s\n", num, (num % 2 == 0) ? "EVEN" : "ODD");
+                break;
+            case 2:
+                printf("%d is %s\n", num, isPrime(num) ? "PRIME" : "NOT PRIME");
+                break;
+            case 3:
+                printf("%d is %s\n", num, isPalindrome(num) ? "PALINDROME" : "NOT PALINDROME");
+                break;
+            case 4:
+                if (num > 0)       printf("%d is POSITIVE\n", num);
+                else if (num < 0)  printf("%d is NEGATIVE\n", num);
+                else               printf("Number is ZERO\n");
+                break;
+            case 5:
+                printf("Reversed: %d\n", reverse(num));
+                break;
+            case 6:
+                printf("Sum of digits: %d\n", sumDigits(num));
+                break;
+        }
+    }
+    return 0;
+}
